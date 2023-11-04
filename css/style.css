@@ -1,0 +1,506 @@
+/* Start Global Style  */
+:root {
+  --mian-scale: 2;
+  --main-transition: all 0.5s ease;
+  --main-color: #7f7f90;
+  /* Dark Mode Color */
+  --dark-color-active--: #fff;
+  --dark-bg-item--: #171717;
+  --dark-bg-section--: #252525;
+  --dark-bg-alt-section--: #202020;
+  --dark-bg-active--: #d38922;
+  --dark-title: #fff;
+  /* Light Mode Color */
+  --light-title: #37373f;
+  --light-color-active: #212529;
+  --light-bg-section: #eee;
+  --light-bg-alt-section: #fff;
+  --light-bg-active: #ce1212;
+  /* Font Family */
+  --defult-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  transition: var(--main-transition);
+}
+
+body {
+  height: 1000vh;
+  margin: 0;
+  font-family: var(--defult-family);
+}
+.container {
+  padding: 25px 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-title {
+  margin-bottom: 40px;
+}
+.main-title .label-section {
+  color: var(--light-title);
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Inter, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+.main-title .heading-section {
+  color: var(--light-color-acive);
+  font-size: 50px;
+  font-family: Amatic SC, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+.main-title .heading-section span {
+  color: var(--light-bg-active);
+}
+/* End Global Style  */
+
+/* Start Navbar */
+nav {
+  background-color: var(--light-bg-alt-section);
+  box-shadow: 0px 0px 14px 0px #0000001b;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+nav .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .container ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  flex-basis: 20%;
+  gap: 20px;
+}
+nav .container h1 {
+  display: flex;
+}
+
+nav .container h1 span {
+  align-self: flex-end;
+}
+nav .container h1 a {
+  color: var(--light-color-active);
+  font-size: 30px;
+  font-weight: 700;
+}
+nav .container h1 span {
+  color: var(--light-bg-active);
+  scale: 1.5;
+}
+nav .container ul li {
+  position: relative;
+}
+nav .container ul li a {
+  color: var(--main-color);
+  font-size: 17px;
+  padding: 50% 0;
+  font-weight: 600;
+}
+
+nav .container ul li .active_Anchor {
+  color: var(--light-color-active);
+}
+:has(input.checkbox-links:checked) + .text{
+  background-color: var(--light-bg-active);
+}
+nav .container ul li::before {
+  content: '';
+  position: absolute;
+  transition: all 0.5s ease;
+  bottom: -10px;
+  width: 0%;
+  background-color: var(--light-bg-active);
+  height: 2px;
+}
+nav .container ul li:hover::before {
+  width: 100%;
+}
+nav .container ul .active_border::before {
+  width: 100%;
+}
+.bars {
+  display: none;
+  color: var(--light-color-active);
+  transition: none;
+}
+.bars i {
+  scale: var(--mian-scale);
+}
+/* End Navbar */
+/* Start Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--light-bg-section);
+}
+.hero .container {
+  display: flex;
+  align-items: center;
+  margin: 100px auto;
+}
+.hero .container .inner {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero .container .inner .info {
+  width: 45%;
+}
+.hero .container .inner .info h2 {
+  width: 90%;
+  color: var(--light-title);
+  font-size: 65px;
+  font-weight: 700;
+  text-align: start;
+  font-family: 'Amatic SC', sans-serif;
+}
+.hero .container .inner .info p {
+  color: #4f4f5a;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+
+.hero .container .inner .info .btns {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+.hero .container .inner .img {
+  width: 45%;
+}
+.hero .container .inner .img img {
+  width: 100%;
+}
+/* End Hero */
+/* Start Chefs */
+.chefs {
+  padding: 100px 0;
+}
+.chefs .cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.chefs .cards .item {
+  position: relative;
+  width: calc(95% / 3);
+  /* width: 450px; */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+  transition: 0.5s all ease;
+}
+.chefs .cards .item:hover {
+  transform: scale(1.05);
+}
+.chefs .cards .item .img {
+  position: relative;
+  width: 100%;
+  height: 30%;
+}
+.chefs .cards .item svg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.chefs .cards .item .img img {
+  max-width: 100%;
+}
+.chefs .cards .item .desc {
+  text-align: center;
+  padding: 10px 25px 25px;
+}
+.chefs .cards .item .desc h3 {
+  color: var(--light-color-acive);
+  font-size: 19px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+}
+.chefs .cards .item .desc span {
+  color: var(--main-color);
+  font-size: 14px;
+  font-family: var(--defult-family);
+}
+.chefs .cards .item .desc p {
+  color: var(--main-color);
+  font-size: 15px;
+  font-family: var(--defult-family);
+  font-style: italic;
+  margin: 15px 10px;
+}
+.chefs .cards .item .icons {
+  position: absolute;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #ffffff4d;
+  color: #37373f66;
+  align-items: center;
+  padding: 5px 15px;
+  border-radius: 5px;
+  right: -60px;
+  top: 40px;
+  transition: var(--main-transition);
+}
+.chefs .cards .item:hover .icons {
+  animation: moving 1s both ease-in;
+  right: 10px;
+}
+
+.chefs .cards .item .icons i {
+  cursor: pointer;
+  transition: all 5s alternate ease-in;
+  font-size: 19px;
+}
+.chefs .cards .item .icons i:hover {
+  color: #37373fe6;
+}
+/* End Chefs */
+/* Start Gallery */
+.gallery {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--light-bg-section);
+}
+.gallery .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.gallery .row .col-1,
+.col-2,
+.col-3 {
+  width: calc(95% / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.gallery .row .imag {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border: 4px solid #fff;
+}
+.gallery .row .imag img {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.gallery .row .imag .overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(100%);
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000091;
+  opacity: 0.9;
+  text-align: center;
+  transition: all 0.3s ease;
+  visibility: hidden;
+}
+.gallery .row .imag:hover img {
+  transform: scale(1.4);
+}
+.gallery .row .imag:hover .overlay {
+  transform: translateY(0px);
+  visibility: visible;
+}
+
+.gallery .row .imag .overlay h2 {
+  color: #fff;
+  font-size: 24px;
+}
+.gallery .row .imag .overlay p {
+  color: #ddd;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--defult-family);
+}
+.gallery .row .imag img {
+  width: 100%;
+  display: block;
+}
+
+/* End Gallery */
+
+/* Start Contact */
+.contact {
+  padding: 100px 0;
+}
+.contact iframe {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+}
+.contact .rows {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  height: 250px;
+}
+.contact .rows .item {
+  width: 49%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px 25px;
+  gap: 20px;
+}
+.contact .rows .item .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-bg-active);
+  border-radius: 50%;
+  /* padding: 20px; */
+  margin: 0px 10px 0px 0px;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+}
+.contact .rows .item .icon i {
+  font-size: 18px;
+  line-height: 18px;
+}
+.contact .rows .item .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.contact .rows .item .inner h3 {
+  color: #7d7d7d;
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-family: nter, sans-serif;
+}
+/* End Contact */
+
+/* Start Form */
+form {
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px 25px;
+  box-shadow: 0 0 1.875rem #00000014;
+  text-align: center;
+}
+form * {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 15px;
+}
+form .row {
+  display: flex;
+  gap: 10px;
+}
+form .row input {
+  padding: 10px;
+}
+form textarea {
+  padding: 10px;
+  height: 200px;
+  resize: vertical;
+}
+form button {
+  width: 15%;
+  background-color: var(--light-bg-active);
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 15px;
+  margin: 25px 0px 0px;
+  font-weight: 400;
+  text-transform: none;
+  text-transform: capitalize;
+  font-family: var(--defult-family);
+}
+/* End Form */
+
+/* Start Dark Mod */
+.dark-mode {
+  width: fit-content;
+  text-align: center;
+  position: relative;
+}
+.dark-mode .checkbox {
+  visibility: hidden;
+  appearance: none;
+  display: none;
+  text-align: center;
+}
+.dark-mode .fa-moon {
+  position: absolute;
+  left: 50%;
+  scale: var(--mian-scale);
+  top: 4px;
+  cursor: pointer;
+  padding-inline: 5px;
+  transition: none;
+}
+.dark-mode .fa-sun {
+  scale: var(--mian-scale);
+  color: transparent;
+  cursor: pointer;
+  padding-inline: 3px;
+  margin-left: 15px;
+  transition: none;
+}
+/* if input was checkd */
+.dark-mode input[type='checkbox']:checked ~ .fa-moon {
+  visibility: hidden;
+  display: none;
+}
+.dark-mode input[type='checkbox']:checked ~ .fa-sun {
+  color: var(--dark-color-active--);
+}
+:has(input.checkbox:checked) {
+  --light-color-active: var(--dark-color-active--);
+  --light-bg-alt-section: var(--dark-bg-item--);
+  --light-bg-active: var(--dark-bg-active--);
+  --light-bg-section: var(--dark-bg-section--);
+  --light-title: var(--dark-title);
+  --light-bg-alt-section: var(--dark-bg-alt-section--);
+}
+
+/* End Dark Mod */
