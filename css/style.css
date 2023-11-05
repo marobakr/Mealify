@@ -11,6 +11,7 @@
   --dark-bg-section--: #252525;
   --dark-bg-alt-section--: #202020;
   --dark-bg-form-section: #0d0d0d;
+  --dark-color-scoll: #171717;
 
   --dark-bg-active--: #c17e1f;
   --dark-title: #fff;
@@ -22,6 +23,8 @@
   --light-bg-alt-section: #fff;
   --light-bg-form-section: #f5f5f5;
   --light-bg-active: #ce1212;
+  --light-color-scoll: #c17e1f;
+
   /* Font Family */
   --defult-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
@@ -37,7 +40,32 @@
   text-decoration: none;
   margin: 0;
   transition: var(--main-transition);
+  scroll-behavior: smooth;
 }
+
+/* Start Re Style Of Browser  */
+::selection {
+  color: #fff;
+  background-color: var(--light-bg-active);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  background-color: grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-color-scoll);
+  border-radius: 10px;
+  height: 150px;
+}
+
+/* End Re Style Of Browser  */
 
 body {
   margin: 0;
@@ -47,6 +75,7 @@ body {
   padding: 25px 25px;
   margin-left: auto;
   margin-right: auto;
+  width: 75%;
 }
 .main-title {
   margin-bottom: 40px;
@@ -79,7 +108,7 @@ nav {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 9999;
 }
 nav .container {
   display: flex;
@@ -121,11 +150,18 @@ nav .container ul li a {
   font-weight: 600;
 }
 
-nav .container ul li .active_Anchor {
+nav .container ul li :is(a):hover {
+  color: var(--light-color-active);
+}
+:has(#home:target) .home-link,
+:has(#chefs:target) .chefs-link,
+:has(#gallery:target) .gallery-link,
+:has(#contact:target) .contact-link,
+:has(#footer:target) .footer-link {
   color: var(--light-color-active);
 }
 
-nav .container ul li::before {
+nav .container ul li :is(a)::before {
   content: '';
   position: absolute;
   transition: all 0.5s ease;
@@ -134,24 +170,32 @@ nav .container ul li::before {
   background-color: var(--light-bg-active);
   height: 2px;
 }
-nav .container ul li:hover::before {
-  width: 100%;
-}
-nav .container ul .active_border::before {
+:has(#home:target) .home-link::before,
+:has(#chefs:target) .chefs-link::before,
+:has(#gallery:target) .gallery-link::before,
+:has(#contact:target) .contact-link::before,
+:has(#footer:target) .footer-link::before {
   width: 100%;
 }
 .bars {
   display: none;
-  color: var(--light-color-active);
   transition: none;
+}
+.close-ul {
+  display: none;
+}
+.bars i{
+  color: var(--light-color-active);
+
 }
 .bars i {
   scale: var(--mian-scale);
 }
+
 /* End Navbar */
 /* Start Hero */
 .hero {
-  /* height: 100vh; */
+  height: 100vh;
   display: flex;
   align-items: center;
   background-color: var(--light-bg-section);
@@ -220,11 +264,10 @@ nav .container ul .active_border::before {
   width: 100%;
 }
 .hero .container .inner .btns button {
-  width: 20%;
   background-color: var(--light-bg-active);
   color: white;
   border: none;
-  padding: 10px 10px;
+  padding: 15px 25px;
   cursor: pointer;
   border-radius: 50px;
   font-size: 15px;
@@ -250,6 +293,7 @@ nav .container ul .active_border::before {
   font-size: var(--main-fontSize);
   line-height: var(--main-lineHight);
 }
+
 /* End Hero */
 /* Start Chefs */
 .chefs {
@@ -269,8 +313,8 @@ nav .container ul .active_border::before {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
-  transition: 0.5s all ease;
   margin: 35px auto;
+  transition: 0.5s all ease;
 }
 .chefs .cards .item:hover {
   transform: scale(1.05);
@@ -290,7 +334,7 @@ nav .container ul .active_border::before {
   fill: var(--light-bg-item);
 }
 .chefs .cards .item .img img {
-  max-width: 100%;
+  width: 100%;
 }
 .chefs .cards .item .desc {
   text-align: center;
@@ -332,7 +376,6 @@ nav .container ul .active_border::before {
   transition: var(--main-transition);
 }
 .chefs .cards .item:hover .icons {
-  animation: moving 1s both ease-in;
   right: 10px;
 }
 
@@ -358,23 +401,23 @@ nav .container ul .active_border::before {
   flex-wrap: wrap;
 }
 .gallery .row .col {
-  width: calc(95% / 3);
+  width: calc(98% / 3);
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
-.gallery .row .imag {
+.gallery .imag {
   overflow: hidden;
   position: relative;
   width: 100%;
   border: 4px solid #fff;
 }
-.gallery .row .imag img {
+.gallery .imag img {
   width: 100%;
   transition: all 0.5s ease;
 }
 
-.gallery .row .imag .overlay {
+.gallery .imag .overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -392,25 +435,25 @@ nav .container ul .active_border::before {
   transition: all 0.3s ease;
   visibility: hidden;
 }
-.gallery .row .imag:hover img {
+.gallery .imag:hover img {
   transform: scale(1.4);
 }
-.gallery .row .imag:hover .overlay {
+.gallery .imag:hover .overlay {
   transform: translateY(0px);
   visibility: visible;
 }
 
-.gallery .row .imag .overlay h2 {
+.gallery .imag .overlay h2 {
   color: #fff;
   font-size: 24px;
 }
-.gallery .row .imag .overlay p {
+.gallery .imag .overlay p {
   color: #ddd;
   font-size: 16px;
   font-weight: 400;
   font-family: var(--defult-family);
 }
-.gallery .row .imag img {
+.gallery .imag img {
   width: 100%;
   display: block;
 }
@@ -527,7 +570,7 @@ form button {
 /* Start Footer */
 .footer {
   position: relative;
-  padding: 50px 0;
+  padding: 50px 0 0;
   background-image: url('../images/textured-metal-background.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -550,6 +593,7 @@ form button {
   display: flex;
   flex-flow: row wrap;
   gap: 20px;
+  justify-content: space-between;
 }
 .footer .cols .col {
   width: calc(95% / 4);
@@ -608,10 +652,12 @@ form button {
 }
 .footer .cols:first-child .social .icons {
   font-size: var(--main-fontSize);
+  cursor: pointer;
   line-height: var(--main-lineHight);
 }
+
 .footer .cols .col:nth-child(2) {
-  flex-grow: 1;
+  flex-grow: 2;
 }
 .footer .cols .col:nth-child(2) h3 {
   color: #fff;
@@ -631,7 +677,6 @@ form button {
   flex-wrap: nowrap;
   justify-content: space-between;
   padding: 5px 0;
-  height: 50px;
   margin-bottom: 20px;
 }
 .footer .cols .col:nth-child(2) .inpuy-email input {
@@ -675,6 +720,8 @@ form button {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
+  margin-bottom: 20px;
+  transition: none !important;
 }
 .footer .cols .col:nth-child(2) .quick-links ul li {
   width: calc(90% / 2);
@@ -682,6 +729,8 @@ form button {
   gap: 10px;
   align-items: center;
   padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0s ease;
 }
 .footer .cols .col:nth-child(2) .quick-links ul li:hover {
   transform: translate(20px);
@@ -713,67 +762,29 @@ form button {
   line-height: var(--main-lineHight);
   color: var(--light-bg-active);
 }
+.footer .title {
+  padding: 30px 0;
+  text-align: center;
+  background-color: #1f1f1f;
+  color: #fff;
+  margin-top: 30px;
+}
+.footer .title * {
+  display: inline-block;
+  font-family: var(--defult-family);
+  font-size: 18px;
+}
+.footer span {
+  color: var(--light-bg-active);
+}
+.footer .title #year {
+  margin-bottom: 0 20px;
+}
 /* End Footer */
 
 /* 
-  selcete color
-  color scroll
   nav with purse css
   nav with mopile media
-  animation with chefs
-iamges with gallery
-icons vedio
-border of tow inputs
+  iamges with gallery
+  icons vedio
 */
-
-
-/* Start Dark Mod */
-.dark-mode {
-  width: fit-content;
-  text-align: center;
-  position: relative;
-}
-.dark-mode .checkbox {
-  visibility: hidden;
-  appearance: none;
-  display: none;
-  text-align: center;
-}
-.dark-mode .fa-moon {
-
-position: absolute;
-  left: 50%;
-scale: var(--mian-scale);
-  top: 4px;
-  cursor: pointer;
-  padding-inline: 5px;
-  transition: none;
-}
-.dark-mode .fa-sun {
-  scale: var(--mian-scale);
-  color: transparent;
-  cursor: pointer;
-  padding-inline: 3px;
-margin-left: 15px;
-  transition: none;
-}
-/* if input was checkd */
-.dark-mode input[type='checkbox']:checked ~ .fa-moon {
-  visibility: hidden;
-display: none;
-}
-.dark-mode input[type='checkbox']:checked ~ .fa-sun {
-  color: var(--dark-color-active--);
-}
-:has(input.checkbox:checked) {
-  --light-color-active: var(--dark-color-active--);
-  --light-bg-alt-section: var(--dark-bg-item--);
-  --light-bg-active: var(--dark-bg-active--);
-  --light-bg-section: var(--dark-bg-section--);
-  --light-title: var(--dark-title);
-  --light-bg-alt-section: var(--dark-bg-alt-section--);
-  --light-bg-item:var(--dark-bg-item--);
-  --light-bg-form-section: var(--dark-bg-form-section);
-}
-
-/* End Dark Mod */

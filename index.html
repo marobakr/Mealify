@@ -21,6 +21,8 @@
     <!-------- main css -------->
     <link rel="stylesheet" href="./css/style.css" />
     <!-------- Media Query -------->
+    <!-------- Mode Color  -------->
+    <link rel="stylesheet" href="./css/modeColor.css" />
     <link rel="stylesheet" href="./css/media.css" />
     <!-------- Google Fonts -------->
     <link
@@ -43,18 +45,21 @@
           <a href="#">mealify </a>
           <span>.</span>
         </h1>
-        <ul>
+        <ul id="nav-mopile">
+            <div class=" close-ul">
+              <a href="#close"><i class="fa-solid fa-xmark fa-xl"></i></a>
+            </div>
           <li>
-            <a href="#">home</a>
+            <a class="home-link" href="#home">home</a>
           </li>
           <li>
-            <a href="#chefs">chefs</a>
+            <a class="chefs-link" href="#chefs">chefs</a>
           </li>
           <li>
-            <a href="#gallery">gallery</a>
+            <a class="gallery-link" href="#gallery">gallery</a>
           </li>
           <li>
-            <a href="#contact">contact</a>
+            <a class="contact-link" href="#contact">contact</a>
           </li>
         </ul>
         <!-- Start Dark mode  -->
@@ -65,14 +70,16 @@
         </label>
         <!-- End Dark mode  -->
         <div class="bars">
-          <i class="fa-solid fa-bars"></i>
+          <a href="#nav-mopile">
+            <i  class="fa-solid fa-bars"></i>
+          </a>
         </div>
       </div>
     </nav>
 
     <!-------- End Navbar -------->
     <!-------- Start Hero -------->
-    <div class="hero">
+    <div id="home" class="hero">
       <div class="container">
         <div class="inner">
           <div class="info">
@@ -98,7 +105,7 @@
     </div>
     <!-------- End Hero -------->
     <!-------- Start Chefs -------->
-    <div class="chefs">
+    <div id="chefs" class="chefs">
       <div class="container">
         <div class="main-title">
           <p class="label-section">chefs</p>
@@ -193,7 +200,7 @@
     </div>
     <!-------- End Chefs -------->
     <!-------- Start Gallery -------->
-    <div class="gallery">
+    <div id="gallery" class="gallery">
       <div class="container">
         <div class="main-title">
           <p class="label-section">GALLERY</p>
@@ -260,7 +267,7 @@
     </div>
     <!-------- End Gallery -------->
     <!-------- Start Contact -------->
-    <div class="contact">
+    <div id="contact" class="contact">
       <div class="container">
         <div class="main-title">
           <p class="label-section">contact</p>
@@ -324,7 +331,7 @@
     </div>
     <!-------- End Contact -------->
     <!-------- Start Footer -------->
-    <div class="footer">
+    <div id="footer" class="footer">
       <div class="container">
         <div class="cols">
           <div class="col">
@@ -395,6 +402,10 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="title">
+        <div id="year">Copy Right</div>
+        <div>© By <span>Marwan Abubakr</span> All Rights Reserved</div>
       </div>
     </div>
     <!-------- End Footer -------->
