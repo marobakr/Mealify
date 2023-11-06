@@ -257,6 +257,9 @@
     justify-content: center;
     margin-top: 10px;
   }
+  .hero .container .inner .info h2 {
+    width: 100%;
+  }
   .heading-section {
     font-size: 30px !important;
     margin-top: 15px;
