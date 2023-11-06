@@ -250,8 +250,8 @@
   nav .dark-mode .fa-regular {
     margin-right: 30px;
   }
-  .home .container .btns {
-    flex-direction: column;
+  .hero .container .inner .info .btns {
+    flex-direction: column !important;
   }
   .hero .container .vedio {
     justify-content: center;
@@ -293,8 +293,7 @@
     padding-right: 0px;
   }
   .dark-mode .fa-moon {
-      left: 20%;
-
+    left: 20%;
   }
 }
 
