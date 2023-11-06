@@ -30,25 +30,26 @@
   .chefs .cards {
     justify-content: center;
   }
-  .contact .rows .item {
-    width: 95%;
-  }
-  .gallery .row .col {
-    width: calc(95% / 1);
-  }
 
   .footer .cols .col {
     width: calc(95% / 1);
   }
 }
-
+@media (max-width: 922px) {
+  .contact .rows .item {
+    width: 100%;
+  }
+}
+@media (min-width: 993px) {
+  .contact .rows .item {
+    width: 49%;
+  }
+}
 @media (min-width: 801px) and (max-width: 1300px) {
   .chefs .cards .item {
     width: calc(95% / 2);
   }
-  .contact .rows .item {
-    width: 100%;
-  }
+
   .gallery .row .col {
     width: calc(95% / 2);
   }
@@ -74,7 +75,7 @@
     right: 20px;
     top: 20px;
   }
-    nav .container h1 {
+  nav .container h1 {
     width: 80%;
   }
   nav .container ul {
@@ -177,19 +178,48 @@
 /* End Chefs */
 
 /* Start Gallery */
-@media (min-width: 769px) and (max-width: 1200px) {
-  .gallery .row .col {
-    margin: 35px 0;
-    text-align: start;
-  }
-}
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .gallery .row {
-    justify-content: center;
+    height: fit-content;
+  }
+  .gallery .row .imag {
+    width: calc(98% / 1);
   }
 }
+@media (min-width: 851px) and (max-width: 992px) {
+  .gallery .row {
+    height: 105rem;
+  }
+  .gallery .row .imag {
+    width: calc(98% / 2);
+  }
+}
+@media (min-width: 993px) and (max-width: 1350px) {
+  .gallery .row {
+    height: 60rem;
+  }
+  .gallery .row .imag {
+    width: calc(98% / 3);
+  }
+}
+@media (min-width: 1351px) and (max-width: 1700px) {
+  .gallery .row {
+    height: 70rem;
+  }
+  .gallery .row .imag {
+    width: calc(98% / 3);
+  }
+}
+
 /* End Gallery */
 
+/* Start Form */
+@media (max-width: 992px) {
+  form .row {
+    flex-wrap: wrap;
+  }
+}
+/* End Form  */
 /* Start Footer */
 @media (max-width: 1200px) {
   .footer .cols .col:nth-child(2) {
@@ -214,3 +244,51 @@
   }
 }
 /* End Footer */
+
+/* Start Small than 500PX For Mopile */
+@media (max-width: 500px) {
+  nav .dark-mode .fa-regular {
+    margin-right: 30px;
+  }
+  .home .container .btns {
+    flex-direction: column;
+  }
+  .hero .container .vedio {
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .heading-section {
+    font-size: 20px !important;
+    margin-top: 15px;
+  }
+  .label-section {
+    font-size: 10px;
+  }
+  .chefs .cards .desc {
+    padding: 5px !important;
+  }
+  .contact .rows .item {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .contact .rows .item .inner {
+    text-align: center;
+  }
+  .contact .rows .item .inner h3 {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  form {
+    padding: 0 0 20px;
+  }
+  .footer .cols .col:nth-child(2) .quick-links ul li {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  /* footer .title .year  {
+    margin-bottom: 20px;
+  } */
+}
+
+/* End Small than 500PX For Mopile */

@@ -46,6 +46,7 @@
   --light-bg-item: var(--dark-bg-item--);
   --light-bg-form-section: var(--dark-bg-form-section);
   --dark-color-scoll: var(--light-color-scoll);
+  --light-color-icon:var(--dark-color-icon)
 }
 
 /* End Dark Mod */
