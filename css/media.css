@@ -30,7 +30,6 @@
   .chefs .cards {
     justify-content: center;
   }
-
   .footer .cols .col {
     width: calc(95% / 1);
   }
@@ -194,7 +193,12 @@
     width: calc(98% / 2);
   }
 }
-@media (min-width: 993px) and (max-width: 1350px) {
+@media (min-width: 993px) and (max-width: 1030px) {
+  .gallery .row {
+    height: 57rem;
+  }
+}
+@media (min-width: 1031px) and (max-width: 1350px) {
   .gallery .row {
     height: 60rem;
   }

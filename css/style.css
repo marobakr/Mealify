@@ -153,7 +153,7 @@ nav .container ul li a {
   font-weight: 600;
 }
 
-nav .container ul li :is(a):hover {
+nav .container ul li  a:hover {
   color: var(--light-color-active);
 }
 :has(#home:target) .home-link,
@@ -172,6 +172,9 @@ nav .container ul li :is(a)::before {
   width: 0%;
   background-color: var(--light-bg-active);
   height: 2px;
+}
+nav .container ul li  a:hover:before {
+  width: 100%;
 }
 :has(#home:target) .home-link::before,
 :has(#chefs:target) .chefs-link::before,
@@ -225,7 +228,7 @@ nav .container ul li :is(a)::before {
   font-family: 'Amatic SC', sans-serif;
 }
 .hero .container .inner .info p {
-  color: #4f4f5a;
+  color: var(--light-title);
   font-size: 16px;
   line-height: 25px;
   font-weight: 400;
