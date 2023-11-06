@@ -258,7 +258,7 @@
     margin-top: 10px;
   }
   .heading-section {
-    font-size: 20px !important;
+    font-size: 30px !important;
     margin-top: 15px;
   }
   .label-section {
@@ -266,6 +266,9 @@
   }
   .chefs .cards .desc {
     padding: 5px !important;
+  }
+  .chefs .main-title {
+    margin-bottom: 20px;
   }
   .contact .rows .item {
     padding: 10px;
@@ -286,9 +289,10 @@
     padding-left: 0px;
     padding-right: 0px;
   }
-  /* footer .title .year  {
-    margin-bottom: 20px;
-  } */
+  .dark-mode .fa-moon {
+      left: 20%;
+
+  }
 }
 
 /* End Small than 500PX For Mopile */
