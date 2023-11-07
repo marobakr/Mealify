@@ -120,7 +120,7 @@
   :has(#nav-mopile:target) ul {
     display: block;
   }
-  :has(#close:target) .close-ul {
+  هنا هاذ لمين ؟ ولي هاذمش كلا س ولي #مش ايدي :has(#close:target) .close-ul {
     display: none;
   }
 }

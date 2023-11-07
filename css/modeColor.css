@@ -36,6 +36,7 @@
 .dark-mode input[type='checkbox']:checked ~ .fa-sun {
   color: var(--dark-color-active--);
 }
+/* has like the html strauctriung  */
 :has(input.checkbox:checked) {
   --light-color-active: var(--dark-color-active--);
   --light-bg-alt-section: var(--dark-bg-item--);
