@@ -42,6 +42,9 @@
   text-decoration: none;
   margin: 0;
   transition: var(--main-transition);
+}
+html,
+body {
   scroll-behavior: smooth;
 }
 
@@ -153,7 +156,7 @@ nav .container ul li a {
   font-weight: 600;
 }
 
-nav .container ul li  a:hover {
+nav .container ul li a:hover {
   color: var(--light-color-active);
 }
 :has(#home:target) .home-link,
@@ -173,9 +176,10 @@ nav .container ul li :is(a)::before {
   background-color: var(--light-bg-active);
   height: 2px;
 }
-nav .container ul li  a:hover:before {
+nav .container ul li a:hover:before {
   width: 100%;
 }
+
 :has(#home:target) .home-link::before,
 :has(#chefs:target) .chefs-link::before,
 :has(#gallery:target) .gallery-link::before,
@@ -439,7 +443,7 @@ nav .container ul li  a:hover:before {
   border: 0.25rem solid var(--light-bg-white);
   border: 5px solid #fff;
   overflow: hidden;
-  margin:0 auto;
+  margin: 0 auto;
 }
 .gallery .imag img {
   width: 100%;
@@ -813,4 +817,3 @@ form button {
   margin-bottom: 10px;
 }
 /* End Footer */
-
