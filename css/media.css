@@ -121,7 +121,7 @@
     display: block;
   }
 
-  هنا هاذ لمين ؟ ولي هاذمش كلا س ولي #مش ايدي :has(#close:target) .close-ul {
+  :has(#close:target) .close-ul {
     display: none;
   }
 }
