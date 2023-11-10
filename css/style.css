@@ -766,7 +766,7 @@ form button {
   align-items: center;
   padding: 10px 15px;
   cursor: pointer;
-  transition: all 0s ease;
+  transition: all 0.5s ease;
 }
 .footer .cols .col:nth-child(2) .quick-links ul li:hover {
   transform: translate(20px);
