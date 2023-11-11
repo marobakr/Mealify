@@ -30,6 +30,9 @@
   .chefs .cards {
     justify-content: center;
   }
+  .gallery .row {
+    columns: 1;
+  }
   .footer .cols .col {
     width: calc(95% / 1);
   }
@@ -49,8 +52,8 @@
     width: calc(95% / 2);
   }
 
-  .gallery .row .col {
-    width: calc(95% / 2);
+  .gallery .row {
+    columns: 2;
   }
   .footer .container .cols .col {
     width: calc(95% / 2);
@@ -176,48 +179,6 @@
   }
 }
 /* End Chefs */
-
-/* Start Gallery */
-@media (max-width: 850px) {
-  .gallery .row {
-    height: fit-content;
-  }
-  .gallery .row .imag {
-    width: calc(98% / 1);
-  }
-}
-@media (min-width: 851px) and (max-width: 992px) {
-  .gallery .row {
-    height: 105rem;
-  }
-  .gallery .row .imag {
-    width: calc(98% / 2);
-  }
-}
-@media (min-width: 993px) and (max-width: 1030px) {
-  .gallery .row {
-    height: 57rem;
-  }
-}
-@media (min-width: 1031px) and (max-width: 1350px) {
-  .gallery .row {
-    height: 60rem;
-  }
-  .gallery .row .imag {
-    width: calc(98% / 3);
-  }
-}
-@media (min-width: 1351px) and (max-width: 1700px) {
-  .gallery .row {
-    height: 70rem;
-  }
-  .gallery .row .imag {
-    width: calc(98% / 3);
-  }
-}
-
-/* End Gallery */
-
 /* Start Form */
 @media (max-width: 992px) {
   form .row {

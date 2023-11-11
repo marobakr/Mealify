@@ -426,24 +426,20 @@ nav .container ul li a:hover:before {
 /* Start Gallery */
 .gallery {
   padding-top: 100px;
-  padding-bottom: 0px;
+  padding-bottom: 100px;
   background-color: var(--light-bg-section);
 }
 .gallery .row {
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: column wrap;
-  gap: 10px;
-  height: 80rem;
+  columns: 3;
 }
 .gallery .row .imag {
   position: relative;
   height: auto;
-  width: calc(99% / 3);
   border: 0.25rem solid var(--light-bg-white);
   border: 5px solid #fff;
   overflow: hidden;
   margin: 0 auto;
+  margin-bottom:20px
 }
 .gallery .imag img {
   width: 100%;
